@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Create application requestBody",
+    "description": "This schema defines the request body for the creation of an application. It includes the required fields for an application, which are the name and description of the application.",
+    "type": "array",
+    "items": [
+        {
+            "type": "object",
+            "properties": {
+                "name": {"type": "string"},
+                "description": {"type": "string"}
+            }
+        }
+    ],
+    "required": ["name", "description"]
+}

@@ -1,0 +1,26 @@
+{
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Create approval request requestBody",
+        "description": "This schema defines the request body for the creation of a request. It includes the required fields for a request, which are the applicationId, actionId, action_data and requestorId.",
+            "type": "object",
+            "properties": {
+              "applicationId": {
+                "type": "string"
+                },
+              "actionId": {
+                "type": "string"
+                },
+              "action_data": {
+                "type": "object"
+                },
+              "requestorId": {
+                "type": "string"
+                }
+            },
+            "required": [
+              "applicationId",
+              "actionId",
+              "action_data",
+              "requestorId"
+              ]
+            }

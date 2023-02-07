@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Update application requestBody",
+    "description": "This schema defines the request body for the update of an application. It includes the required fields for an application, which are the name and description of the application.",
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"}
+    },
+    "required": ["name", "description"]
+}
+

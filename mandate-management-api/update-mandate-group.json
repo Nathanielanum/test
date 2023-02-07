@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Update mandate group requestBody",
+    "description": "This schema defines the request body for the update of an mandate group. It includes the required fields for an application, which are the level, applicationId and the userId of the application.",
+    "type": "object",
+    "properties": {
+        "level": {
+            "type": "integer"
+            },
+          "applicationId": {
+            "type": "string"
+            },
+          "userId": {
+            "type": "string"
+            }
+        },
+        "required": [
+          "level",
+          "applicationId",
+          "userId"
+          ]
+}

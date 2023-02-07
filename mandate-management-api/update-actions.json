@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Update action requestBody",
+    "description": "This schema defines the request body for the update of an action. It includes the required fields for an action, which are the name, applicationId and organisation_namspace of the action.",
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "description": {"type": "string"},
+        "applicationId":{ "type": "string"},
+        "organisation_namespace": {"type": "string"}
+        },
+    "required": ["name", "applicationId", "organisation_namespace"]
+}
