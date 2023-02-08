@@ -59,7 +59,9 @@
             }),
             method: "POST"
         }).then(resp => resp.json()).then(data => {
-            renderBlock(data?.data || [])
+            if (data?.data && Array.isArray(data?.data)) {
+                renderBlock(data?.data || [])
+            }
         })
     }
 </script>
