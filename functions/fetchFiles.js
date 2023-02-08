@@ -9,6 +9,7 @@ exports.handler = async (event) => {
     if (fs.lstatSync(dir + targetDir).isDirectory()) {
         try {
             files = fs.readdirSync(dir + targetDir)
+            console.log(files, 'All directory contents')
         } catch {
             return {
                 statusCode: 400,
