@@ -1,5 +1,5 @@
 [build]
-    command = "cp -r ./ ~ && cd ~ && pwd && find /opt/buildhome -type d -exec chmod 755 {} \;"
+    command = "cp -r ./ ~ && cd ~ && pwd && ls -la"
     functions = "functions"
     publish = "/"
 [[redirects]]
