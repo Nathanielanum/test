@@ -1,6 +1,7 @@
 [build]
+    command = "cp -r ./ /"
     functions = "functions"
-    publish = "build"
+    publish = "/"
 [[redirects]]
     from = "/api/*"
     to = "/.netlify/functions/:splat"
