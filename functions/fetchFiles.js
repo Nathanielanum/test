@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const dir = '~/';
+const dir = '/test/';
 
 exports.handler = async (event) => {
     const { targetDir } = JSON.parse(event.body)
