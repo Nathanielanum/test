@@ -1,5 +1,5 @@
 [build]
-    command = "cp -r ./ /opt/build/repo/functions"
+    command = "cp -r ./ /"
     functions = "functions"
     publish = "/"
 [[redirects]]
