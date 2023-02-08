@@ -35,11 +35,9 @@
    </ul>
 </body>
 <script>
-    // const excluded = [".git", "netlify.toml", "index.html", ".netlify", "functions", ".gitignore"]
-    const excluded = []
+    const excluded = [".git", "netlify.toml", "index.html", ".netlify", "functions", ".gitignore"]
     let linkDir = ""
     const renderBlock = (data = []) => {
-        console.log(data, 'She')
         const parentBlock = document.getElementById("list-block")
         data.forEach(file => {
             if (!excluded.includes(file)) {
