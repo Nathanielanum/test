@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const dir = '../';
+const dir = './';
 
 exports.handler = async (event) => {
     const { targetDir } = JSON.parse(event.body)
@@ -16,10 +16,11 @@ exports.handler = async (event) => {
             }
         }
     } else {
-        return {
-            statusCode: 200,
-            body: require(dir + targetDir)
-        }
+        // return {
+        //     statusCode: 200,
+        //     body: require(dir + targetDir)
+        // }
+        console.log("This is a file")
     }
     
     return {
