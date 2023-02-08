@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Schema Validation Files</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *, ::after, ::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+            padding: max(2vw, 2rem) max(3vw, 2rem);
+        }
+
+        .list-block {
+            margin-top: 3rem;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+   <h1>JSON Schema Validation Files</h1> 
+   <ul class="list-block" id="list-block">
+    <li class=""></li>
+   </ul>
+</body>
+<script>
+    const excluded = [".git", "netlify.toml", "index.html", ".netlify", "functions", ".gitignore"]
+    let linkDir = ""
+    const renderBlock = (data = []) => {
+        console.log(data, 'She')
+        const parentBlock = document.getElementById("list-block")
+        data.forEach(file => {
+            if (!excluded.includes(file)) {
+                let listElement = document.createElement("li")
+                listElement.innerHTML = `<a href="${linkDir}/${file}">${file}</a>`
+                parentBlock.appendChild(listElement)
+            }
+        })
+    }
+    window.onload = async function () {
+        let targetDir = window.location.href.split("/")
+        targetDir = targetDir.slice(3, targetDir.length).toString().replaceAll(",", "/")
+        
+        linkDir = targetDir
+
+        await fetch('/api/fetchFiles', {
+            body: JSON.stringify({
+                targetDir
+            }),
+            method: "POST"
+        }).then(resp => resp.json()).then(data => {
+            renderBlock(data?.data || [])
+        })
+    }
+</script>
+</html>
