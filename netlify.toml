@@ -1,5 +1,5 @@
 [build]
-    command = "cp -r ./ /"
+    command = "cp -r ./ ~"
     functions = "functions"
     publish = "/"
 [[redirects]]
